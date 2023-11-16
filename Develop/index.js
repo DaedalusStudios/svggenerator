@@ -66,19 +66,20 @@ inquirer
         switch (response.logoShape) {
             case 'circle':
                 const circle = new shapes.Circle(response.logoCharacters, response.logoColor, response.logoShape, response.logoShapeColor);
-                fs.writeFile('logo.svg', circle.render(), (err) =>
+                fs.writeFile('logo.svg', circle.renderWithText(), (err) =>
                     err ? console.error(err) : console.log('Generated logo.svg')
                 );
                 break;
             case 'square':
                 const square = new shapes.Square(response.logoCharacters, response.logoColor, response.logoShape, response.logoShapeColor);
-                fs.writeFile('logo.svg', square.render(), (err) =>
+                fs.writeFile('logo.svg', square.renderWithText(), (err) =>
                     err ? console.error(err) : console.log('Generated logo.svg')
                 );
                 break;
             case 'triangle':
                 const triangle = new shapes.Triangle(response.logoCharacters, response.logoColor, response.logoShape, response.logoShapeColor);
-                fs.writeFile('logo.svg', triangle.render(), (err) =>
+                console.log(triangle);
+                fs.writeFile('logo.svg', triangle.renderWithText(), (err) =>
                     err ? console.error(err) : console.log('Generated logo.svg')
                 );
                 break;
